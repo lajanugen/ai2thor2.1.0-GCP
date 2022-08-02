@@ -18,6 +18,13 @@ The CUDA driver version seems to have some impact on things. The following confi
 
 * An example xorg.conf is attached for reference
 
+### ai2thor installation
+```
+pip install ai2thor==2.1.0
+pip install flask==1.1.2 jinja2==2.11.2 markupsafe==1.1.1 itsdangerous==1.1.0 werkzeug==1.0.1
+```
+Without the dependencies on the second line, sometimes the controller hangs at initialization
+
 ### Testing ai2thor
 
 `sudo X: 0` (Start xserver)
@@ -33,7 +40,6 @@ controller.step(dict(action='Initialize', gridSize=0.25))
 
 ### Other comments
 * NVIDIA driver could be the main issue. Try removing all nvidia drivers and installing from fresh (Eg. Try the specific version above)
-* Sometimes ai2thor may hang at the controller Initialization. These set of packages were useful to get around this issue: https://github.com/valtsblukis/hlsm/blob/main/hlsm-alfred.yml
 * Useful links
   * https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Training-on-Amazon-Web-Service.md
   * https://medium.com/@etendue2013/how-to-run-ai2-thor-simulation-fast-with-google-cloud-platform-gcp-c9fcde213a4a
